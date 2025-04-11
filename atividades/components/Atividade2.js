@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Text, View, TextInput, Button } from 'react-native';
+import {Picker} from '@react-native-picker/picker';
 
 const calculo = () => {
   const [salario, setSalario] = useState(0);
