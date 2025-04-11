@@ -1,60 +1,43 @@
 import { useState } from 'react';
 import { Text, View, TextInput, Button } from 'react-native';
-import {Picker} from '@react-native-picker/picker';
+import { Picker,} from '@react-native-picker/picker';
 
 const calculo = () => {
-  const [salario, setSalario] = useState(0);
-  const [horario, setHorario] = useState(0);
-  const [resultado, setResultado] = useState();
+  const [km, setKm] = useState(0);
+  const [veiculo, setVeiculo] = useState(0);
+  const [selectedLanguage, setSelectedLanguage] = useState();
+
+  const [valorcarro, setValorcarro] = useState(0.10);
+  const [valormoto, setValorMoto] = useState(0.05);
+  const [valorcaminhao, setCaminhao] = useState(0.15);
 
 
   return (
     <View>
-      <Text>Calculo de Horas Extras</Text>
-      <Text>Digite o seu salario base</Text>
+      <Text>Quantos KM foram rodados ?</Text>
       <TextInput
-        value={salario}
-        onChangeText={setSalario}
-        placeholder="Seu Salario"
+        value={km}
+        onChangeText={setKm}
+        placeholder="KM Rodados"
       />
-      <Text>Digite suas horas trabalhadas</Text>
-      <TextInput
-        value={horario}
-        onChangeText={setHorario}
-        placeholder="Seu horario"
-      />
+
+      <Picker
+        onValueChange={(itemValue, itemIndex) =>
+          setSelectedLanguage(itemValue)
+        }>
+        <Picker.Item label="Carro" value={valorcarro} />
+        <Picker.Item label="Moto" value={valormoto} />
+        <Picker.Item label="Caminhão" value={valorcaminhao} />
+      </Picker>
 
       <Button
         title="Calcular"
         color="blue"
         onPress={() => {
-          let valorhora = 0
-          let horaExtra = 0
-          let hrspassadas = 0
-          let calculaHr = 0
-          let calculofinal = 0
-          let resultado = 0
-
-          if (horario >= 160) {
-            valorhora = +salario / 160 ;
-            horaExtra = valorhora * (50 / 100);
-            hrspassadas = +horario - 160;
-            calculaHr = horaExtra + valorhora;
-            calculofinal = calculaHr * hrspassadas;
-            resultado = calculofinal + +salario;
-          } 
-          else {
-            valorhora = +salario / 160 ;
-            calculofinal = valorhora * +horario;
-            resultado = calculofinal;
-          }
-
-          
-
-          setResultado(resultado);
+          setVeiculo(selectedLanguage * km)
         }}
       />
-      <Text>As suas horas extras são: {resultado}</Text>
+      <Text>Ira pagar: {veiculo}</Text>
     </View>
   );
 };

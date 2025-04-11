@@ -1,5 +1,7 @@
 import {View, StyleSheet } from 'react-native';
 import Atividade1 from './components/Atividade1';
+import Atividade2 from './components/Atividade2';
+import Atividade3 from './components/Atividade3';
 
 
 
@@ -7,7 +9,7 @@ export default function App() {
   return (
     <View style={styles.container}>
     
-     <Atividade1 />
+     <Atividade3 />
     </View>
 
   );
