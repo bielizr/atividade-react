@@ -1,10 +1,17 @@
-import { View, StyleSheet, } from 'react-native';
+import { View, StyleSheet, Text} from 'react-native';
 import Quadrado from './Quadrado'
 
 const Flexbox3 = () => {
   return (
 
     <View styles={styles.container}>
+        <Text style={{
+            textAlign: 'center',
+            margin: '20',
+            fontWeight: '900',
+        }}>
+            Tabuleiro de Xadrez
+        </Text>
       <View style={{
           flexDirection: 'row',
       }}>
