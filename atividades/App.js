@@ -2,14 +2,13 @@ import {View, StyleSheet } from 'react-native';
 import Atividade1 from './components/Atividade1';
 import Atividade2 from './components/Atividade2';
 import Atividade3 from './components/Atividade3';
-
-
+import Atividade4 from './components/Atividade4';
 
 export default function App() {
   return (
     <View style={styles.container}>
     
-     <Atividade3 />
+     <Atividade4 />
     </View>
 
   );

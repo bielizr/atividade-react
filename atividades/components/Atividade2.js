@@ -7,9 +7,9 @@ const calculo = () => {
   const [veiculo, setVeiculo] = useState(0);
   const [selectedLanguage, setSelectedLanguage] = useState();
 
-  const [valorcarro, setValorcarro] = useState(0.10);
-  const [valormoto, setValorMoto] = useState(0.05);
-  const [valorcaminhao, setCaminhao] = useState(0.15);
+  const [valorcarro] = useState(0.10);
+  const [valormoto] = useState(0.05);
+  const [valorcaminhao] = useState(0.15);
 
 
   return (
